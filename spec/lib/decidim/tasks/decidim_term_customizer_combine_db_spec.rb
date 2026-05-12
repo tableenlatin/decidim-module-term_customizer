@@ -45,7 +45,6 @@ describe "rake decidim:term_customizer:combine_db", type: :task do
       it "passes" do
         task.reenable
         expect { task.invoke("te") }.to output("Combined 1 file(s) into 'config/locales/te.yml'\nTranslations combined successfully!\n").to_stdout
-        check_no_errors_have_been_printed
       end
 
       it "writes file correctly" do

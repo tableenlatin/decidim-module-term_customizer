@@ -34,6 +34,10 @@ You can add the term customizations using either of the following methods:
 - Add the term customizations for specific translation keys in case you have the
   technical knowledge to find out the translation keys.
 
+## Compatibility
+
+This module targets Decidim `0.32.x`.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -46,8 +50,8 @@ And then execute:
 
 ```bash
 $ bundle
-$ bundle exec rails decidim_term_customizer:install:migrations
-$ bundle exec rails db:migrate
+$ bin/rails decidim_term_customizer:install:migrations
+$ bin/rails db:migrate
 ```
 
 To keep the gem up to date, you can use the commands above to also update it.

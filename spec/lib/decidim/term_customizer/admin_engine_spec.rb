@@ -19,6 +19,9 @@ describe Decidim::TermCustomizer::AdminEngine do
     it "mounts the routes" do
       expect(Decidim::Core::Engine).to receive(:routes) do |&block|
         context = context_class.new(&block)
+        allow(context).to receive(:extend)
+        allow(context).to receive(:locale_scope_options).and_return({})
+        expect(context).to receive(:scope).with("/:locale").and_yield
         expect(context).to receive(:mount).with(
           described_class,
           at: "/admin/term_customizer",

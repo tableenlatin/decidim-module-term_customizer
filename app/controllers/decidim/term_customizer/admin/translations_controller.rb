@@ -135,7 +135,7 @@ module Decidim
         end
 
         def translation
-          @translation ||= Decidim::TermCustomizer::Translation.find(params[:id])
+          @translation ||= translation_set.translations.find(params[:id])
         end
 
         alias collection translations

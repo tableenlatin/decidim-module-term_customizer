@@ -40,7 +40,11 @@ module Decidim
 
       initializer "decidim_term_customizer.admin_mount_routes" do
         Decidim::Core::Engine.routes do
-          mount Decidim::TermCustomizer::AdminEngine, at: "/admin/term_customizer", as: "decidim_admin_term_customizer"
+          extend Decidim::Routes::LocaleRedirects
+
+          scope "/:locale", **locale_scope_options do
+            mount Decidim::TermCustomizer::AdminEngine, at: "/admin/term_customizer", as: "decidim_admin_term_customizer"
+          end
         end
       end
 

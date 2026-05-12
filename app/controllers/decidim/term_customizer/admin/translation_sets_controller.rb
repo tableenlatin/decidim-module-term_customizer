@@ -126,7 +126,7 @@ module Decidim
         end
 
         def set
-          @set ||= Decidim::TermCustomizer::TranslationSet.find(params[:id])
+          @set ||= OrganizationTranslationSets.new(current_organization).query.find(params[:id])
         end
 
         def blank_constraint

@@ -1,11 +1,12 @@
 /.bundle/
-/.yardoc
+/.yardoc/
 /_yardoc/
 /coverage/
 /doc/
 /pkg/
 /spec/reports/
 /tmp/
+/log/
 
 # Node
 /node_modules/
@@ -16,6 +17,17 @@
 # rbenv environment variables
 .rbenv-vars
 
+# Local environment overrides
+.env.local
+
+# Ruby debug / language server
+.byebug_history
+.ruby-lsp/
+
+# Generated artifacts
+*.gem
+*.rbc
+
 # default test application
 spec/decidim_dummy_app
 
@@ -23,3 +35,12 @@ spec/decidim_dummy_app
 development_app
 tailwind.config.js
 development_app_27
+
+# macOS
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+Icon?

@@ -15,23 +15,25 @@ DECIDIM_VERSION = Decidim::TermCustomizer::DECIDIM_VERSION
 gem "decidim", DECIDIM_VERSION
 gem "decidim-term_customizer", path: "."
 
-gem "bootsnap", "~> 1.4"
+gem "bootsnap", "~> 1.23"
 
-gem "puma", ">= 5.6.2"
+gem "puma", ">= 6.5"
 
 gem "faker", "~> 3.2"
 
 group :development, :test do
-  gem "byebug", "~> 11.0", platform: :mri
-  gem "dalli", "~> 2.7", ">= 2.7.10" # For testing MemCacheStore
+  gem "brakeman", "~> 8.0"
+  gem "byebug", "~> 13.0", platform: :mri
+  gem "dalli", "~> 5.0" # For testing MemCacheStore
   gem "decidim-dev", DECIDIM_VERSION
   gem "decidim-participatory_processes", DECIDIM_VERSION
   gem "decidim-proposals", DECIDIM_VERSION
+  gem "parallel_tests", "~> 5.6"
 end
 
 group :development do
-  gem "letter_opener_web", "~> 2.0"
-  gem "listen", "~> 3.1"
+  gem "letter_opener_web", "~> 3.0"
+  gem "listen", "~> 3.10"
   gem "rubocop-faker"
-  gem "web-console", "~> 4.2"
+  gem "web-console", "~> 4.3"
 end
