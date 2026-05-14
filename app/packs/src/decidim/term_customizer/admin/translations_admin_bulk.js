@@ -14,32 +14,32 @@ $(document).ready(function () {
 
   let showBulkActionsButton = function() {
     if (selectedTranslationsCount() > 0) {
-      $("#js-bulk-actions-button").removeClass("hide");
+      $("#js-bulk-actions-button").removeClass("hidden");
     }
   }
 
   let hideBulkActionsButton = function(force = false) {
     if (selectedTranslationsCount() === 0 || force === true) {
-      $("#js-bulk-actions-button").addClass("hide");
+      $("#js-bulk-actions-button").addClass("hidden");
       $("#js-bulk-actions-dropdown").removeClass("is-open");
     }
   }
 
   window.showOtherActionsButtons = function() {
-    $("#js-other-actions-wrapper").removeClass("hide");
+    $("#js-other-actions-wrapper").removeClass("hidden");
   }
 
   const hideOtherActionsButtons = function() {
-    $("#js-other-actions-wrapper").addClass("hide");
+    $("#js-other-actions-wrapper").addClass("hidden");
   }
 
   window.hideBulkActionForms = function() {
-    return $(".js-bulk-action-form").addClass("hide");
+    return $(".js-bulk-action-form").addClass("hidden");
   }
 
   if ($(".js-bulk-action-form").length) {
     window.hideBulkActionForms();
-    $("#js-bulk-actions-button").addClass("hide");
+    $("#js-bulk-actions-button").addClass("hidden");
 
     $("#js-bulk-actions-dropdown ul li button").click(function(ev) {
       ev.preventDefault();
@@ -50,7 +50,7 @@ $(document).ready(function () {
           $(".layout-content > .callout-wrapper").html("");
         })
 
-        $(`#js-${action}-actions`).removeClass("hide");
+        $(`#js-${action}-actions`).removeClass("hidden");
         hideBulkActionsButton(true);
         hideOtherActionsButtons();
       }

@@ -55,9 +55,9 @@ $(() => {
     const resultsList = searchInput.nextSibling;
     for (const resultItem of resultsList.querySelectorAll("li")) {
       if (selectedTerms.indexOf(resultItem.dataset.value) < 0) {
-        resultItem.classList.remove("hide");
+        resultItem.classList.remove("hidden");
       } else {
-        resultItem.classList.add("hide");
+        resultItem.classList.add("hidden");
       }
     }
   };
@@ -81,7 +81,7 @@ $(() => {
 
     const targetTable = resultsElement.querySelector("table tbody");
     targetTable.appendChild(newRow);
-    resultsElement.classList.remove("hide");
+    resultsElement.classList.remove("hidden");
 
     // Add it to the selected elements and hide the selected item
     selectedTerms.push(selectedItem.value);
@@ -95,7 +95,7 @@ $(() => {
       hideSelectedItems();
 
       if (targetTable.querySelectorAll("tr").length < 1) {
-        resultsElement.classList.add("hide");
+        resultsElement.classList.add("hidden");
       }
     });
     setTimeout(() => {
